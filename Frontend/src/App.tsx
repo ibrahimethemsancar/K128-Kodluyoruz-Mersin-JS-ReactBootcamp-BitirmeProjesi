@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Head from './components/Head';
 import './index.css'
 import {
@@ -9,6 +8,7 @@ import {
   Link,
 } from "react-router-dom";
 import HomeImg from './components/HomeImg/HomeImg';
+import Login from './components/Login/Login';
 
 
 
@@ -17,10 +17,16 @@ function App() {
     <Router>
 
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
         <Head/>
           <HomeImg/>
         </Route>
+        <Switch>
+        <Route path="/Login">
+          <Login/>
+        </Route>
+        </Switch>
+        
       </Switch>
     </Router>
 

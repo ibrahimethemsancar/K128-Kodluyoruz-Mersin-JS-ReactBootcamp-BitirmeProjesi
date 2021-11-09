@@ -5,6 +5,9 @@ import './Head.css'
 import Logo from './assets/HbLogo.svg'
 import Profile from './assets/Profile.svg'
 import ShoppingCart from './assets/shoppingCart.svg'
+import {
+  Link
+} from "react-router-dom";
  export interface Props {
    
   }
@@ -35,12 +38,12 @@ getUser()
       <nav className="navbar  navbar-light bg-white" style={styles().navBar}>
         <div className="TopList">
           <ul>
-            <li ><a href="https://www.hepsiburada.com/siparislerim" title="Siparişlerim" rel="nofollow">Siparişlerim</a></li>
-          <li><a href="https://www.hepsiburada.com/gunun-firsati-teklifi" title="Süper Fiyat, Süper Teklif">Süper Fiyat, Süper Teklif</a></li>
-          <li><a href="https://www.hepsiburada.com/kampanyalar/yurt-disindan-urunler?wt_int=hytop.yurtdisi.kampanya" title="Yurt Dışından" rel="nofollow">Yurt Dışından</a></li>
-          <div className="sf-Overlay-39Wjv sf-TopLinks-2A5jW"></div><li><a className="" href="https://www.hepsiburada.com/kampanyalar" target="" title="Kampanyalar">Kampanyalar</a></li>
-          <li className="sf-TopLinks-3fj5n"><a href="https://www.hepsiburada.com/girisimci-kadinlar" title="Girişimci Kadınlar" rel="nofollow">Girişimci Kadınlar</a></li>
-          <li><a href="https://www.hepsiburada.com/cozummerkezi" title="Çözüm Merkezi" rel="nofollow">Çözüm Merkezi</a></li><li><a href="https://www.hepsiburada.com/nasil-online-satis-yapilir" title="Hepsiburada'da Satıcı Ol" rel="nofollow">Hepsiburada'da Satıcı Ol</a></li>
+            <li ><a href="#" title="Siparişlerim" rel="nofollow">Siparişlerim</a></li>
+          <li><a href="#" title="Süper Fiyat, Süper Teklif">Süper Fiyat, Süper Teklif</a></li>
+          <li><a href="#" title="Yurt Dışından" rel="nofollow">Yurt Dışından</a></li>
+          <div className="sf-Overlay-39Wjv sf-TopLinks-2A5jW"></div><li><a className="" href="#" target="" title="Kampanyalar">Kampanyalar</a></li>
+          <li className="sf-TopLinks-3fj5n"><a href="#" title="Girişimci Kadınlar" rel="nofollow">Girişimci Kadınlar</a></li>
+          <li><a href="#" title="Çözüm Merkezi" rel="nofollow">Çözüm Merkezi</a></li><li><a href="#" title="Hepsiburada'da Satıcı Ol" rel="nofollow">Hepsiburada'da Satıcı Ol</a></li>
           </ul>
           </div>
     <div className='secondPart'>      
@@ -52,7 +55,7 @@ getUser()
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <HbButton text='Konum' text2='İstanbul' src={location} className='locationBtn'/>
-    <HbButton text='Giriş Yap' text2='veya üye ol' src={Profile} className='loginBtn' id='img'/>
+   <Link to={'/Login'}><HbButton text='Giriş Yap' text2='veya üye ol' src={Profile} className='loginBtn' id='img'/></Link> 
     <HbButton text='Sepetim'  src={ShoppingCart} className='shoppingCart' id='shopping' /><br/>
    
     </div>
