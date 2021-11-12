@@ -6,6 +6,13 @@ import Logo from './assets/HbLogo.svg'
 import Profile from './assets/Profile.svg'
 import ShoppingCart from './assets/shoppingCart.svg'
 import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+  Redirect,
+  useParams,
+  useRouteMatch,
   Link
 } from "react-router-dom";
  export interface Props {
@@ -22,7 +29,7 @@ export default function HbTopImg({
 
 async function getUser(){
  try{
-const response=await fetch('http://localhost:3001/products');
+const response=await fetch('https://my-expressjs-ap.herokuapp.com/products');
 const jsonData=await response.json();
 console.log(jsonData)
  }
@@ -55,7 +62,7 @@ getUser()
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <HbButton text='Konum' text2='İstanbul' src={location} className='locationBtn'/>
-   <Link to={'/Login'}><HbButton text='Giriş Yap' text2='veya üye ol' src={Profile} className='loginBtn' id='img'/></Link> 
+   <Link to={'/Login'}><HbButton text='Giriş Yap' text2='veya üye ol' src={Profile} className='headLoginBtn' id='img'/></Link> 
     <HbButton text='Sepetim'  src={ShoppingCart} className='shoppingCart' id='shopping' /><br/>
    
     </div>
@@ -71,7 +78,7 @@ getUser()
         <ul id='menu-list'>
           <li className='menu-li'>
             <span className='menu-span'>
-              <a href="" className='menu-link'>Elektronik</a>
+            <Link to={'/Products/elektronik'}> <a href="" className='menu-link'>Elektronik</a></Link>
             </span><div className='vl'></div>
           </li>
           <li className='menu-li'>

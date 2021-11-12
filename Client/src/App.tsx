@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import HomeImg from './components/HomeImg/HomeImg';
 import Login from './components/Login/Login';
+import Products from './components/Product/Products';
 
 
 
@@ -21,12 +22,14 @@ function App() {
         <Head/>
           <HomeImg/>
         </Route>
-        <Switch>
-        <Route path="/Login">
+        
+        <Route  path="/Login">
           <Login/>
         </Route>
-        </Switch>
         
+      <Route path="/Products/:category">
+        <Products/>
+      </Route>
       </Switch>
     </Router>
 
